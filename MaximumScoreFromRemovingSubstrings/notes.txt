@@ -1,0 +1,12 @@
+## Intuition
+
+We are allowed to remove two types of substrings repeatedly: "ab" for x points, and "ba" for y points.
+
+To maximize points, we should:
+1. Always remove the higher-value substring first.
+2. Then remove the lower-value one.
+
+Why?
+Because removing "ab" might prevent later removal of "ba" or vice versa. So, we greedily remove the more valuable one first using a stack, which helps check the previous character in constant time.
+
+After removing one type, we repeat the process for the remaining string and remove the second type.
