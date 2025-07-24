@@ -1,0 +1,12 @@
+Leetcode 2322 - Minimum Score After Removals on a Tree
+
+💡 Key Concepts:
+- Tree DP
+- XOR properties
+- Subtree tracking using DFS
+- Ancestor check using Euler Tour (inTime, outTime)
+
+🧠 Tips:
+- Use xorSub[node] to represent subtree XORs.
+- Always remember: totalXor = xorSub[0]
+- Use isAncestor(u, v) = in[u] <= in[v] && out[u] >= out[v]
