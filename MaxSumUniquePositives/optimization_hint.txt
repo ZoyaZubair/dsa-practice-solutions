@@ -1,0 +1,9 @@
+## Optimization Hint
+
+Your current solution uses `std::set` to store unique values, which has O(log n) insertion time.
+
+### Further Optimization:
+- Replace `std::set<int>` with `std::unordered_set<int>` for average-case O(1) insertions.
+- This reduces the overall time complexity from O(n log n) to O(n).
+
+Other than that, your logic is sound and handles edge cases well.
