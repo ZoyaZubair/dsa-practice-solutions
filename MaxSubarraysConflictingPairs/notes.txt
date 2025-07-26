@@ -1,0 +1,20 @@
+Maximize Subarrays - Notes
+
+1. Problem: Find max number of subarrays after removing one conflicting pair such that no subarray contains both items from any remaining pair.
+
+2. Naive solution fails due to O(k * n) complexity.
+
+3. Optimized Plan:
+   - Build startAt[x] = list of all (y, idx) such that (x, y) is a conflict.
+   - Use min-heap to keep track of active conflict boundaries while sweeping from right to left.
+   - Maintain firstBlockingPos[i] as rightmost valid index for subarray starting at i.
+   - Also track secondBlockingPos[i] and idxBlocking[i] for alternative boundaries (if one conflict is removed).
+
+4. For each index i:
+   - valid subarrays = firstBlockingPos[i] - i + 1
+   - if removing conflict idxBlocking[i], we can gain extra subarrays up to secondBlockingPos[i] - firstBlockingPos[i]
+
+5. Final answer:
+   - Total valid subarrays without removal + max possible gain by removing one conflict.
+
+This method is fast and passes all test cases within time limits.
