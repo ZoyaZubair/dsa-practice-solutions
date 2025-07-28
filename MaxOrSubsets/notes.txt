@@ -1,0 +1,19 @@
+# Notes: Intuition and Approach
+
+### Step-by-step Intuition:
+
+1. Calculate the maximum OR value possible from the array using:
+   maxOr = nums[0] | nums[1] | ... | nums[n-1]
+
+2. Generate all subsets using bitmasking (2^n subsets).
+
+3. For each subset:
+   - Compute the OR of elements
+   - If OR == maxOr, increase the count
+
+### Why This Works:
+- OR operation is associative and accumulative.
+- Bitmasking allows efficient generation of subsets up to 2^16.
+
+### Time Complexity:
+- O(n * 2^n) — acceptable since n <= 16
