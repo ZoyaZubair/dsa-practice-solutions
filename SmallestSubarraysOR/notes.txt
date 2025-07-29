@@ -1,0 +1,12 @@
+# Notes on the Approach
+
+- Use an array `lastSeen[32]` to track the last position each bit was seen.
+- For each index from n-1 to 0:
+    - Update `lastSeen` for each bit in `nums[i]`.
+    - The farthest index we need to reach is max of all `lastSeen[b]`.
+    - Answer for index i = maxReach - i + 1
+- We only loop over 32 bits per element (constant).
+
+Handles edge cases like:
+- nums = [0, 0, 0]
+- nums = [2^30]
