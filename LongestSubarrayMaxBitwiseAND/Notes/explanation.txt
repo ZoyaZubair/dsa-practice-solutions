@@ -1,0 +1,17 @@
+## Explanation
+
+The key insight is that:
+- The bitwise AND of a subarray is limited by the smallest element in it.
+- Hence, the maximum AND value possible must be equal to the **maximum element** in the array.
+- So we only care about subarrays where every element equals this maximum value.
+
+### Steps:
+1. Compute the maximum element `k` from the array.
+2. Iterate through the array and count lengths of contiguous blocks where elements are equal to `k`.
+3. Track the maximum length among them.
+
+### Time Complexity:
+- O(n), where n is the length of the array.
+
+### Space Complexity:
+- O(1), constant space.
