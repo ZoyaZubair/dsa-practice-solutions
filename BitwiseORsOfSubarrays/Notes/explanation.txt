@@ -1,0 +1,17 @@
+## Explanation and Intuition
+
+### Core Idea:
+At every index `i`, maintain all possible OR values of subarrays that end at index `i`.  
+Use a set to:
+- Avoid duplicates.
+- Propagate previous subarray ORs using `OR` with current number.
+
+### Why It Works:
+- Bitwise ORs accumulate and increase.
+- We only need to track the ORs from the previous index to compute the next ones.
+
+### Time Complexity:
+- Worst-case O(n * 30) = O(n), where 30 is the number of bits (since OR grows fast).
+
+### Space Complexity:
+- O(n * 30) in the worst case for storing OR values in sets.
