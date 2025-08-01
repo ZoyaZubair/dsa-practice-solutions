@@ -1,0 +1,18 @@
+# Pascal's Triangle - Explanation and Intuition
+
+## Approach:
+This solution uses the binomial coefficient:
+C(i, j) = C(i, j-1) * (i - j + 1) / j
+
+- `returnRows(row)` generates the `row`th row using the above formula in O(n) time.
+- The outer function `generate` builds the triangle row by row.
+
+## Time Complexity:
+- O(n^2): Generating each row with up to `n` elements.
+
+## Space Complexity:
+- O(n^2): To store the full triangle.
+
+## Advantages:
+- Uses only integer operations.
+- Avoids full DP table construction.
