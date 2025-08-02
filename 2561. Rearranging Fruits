@@ -1,0 +1,28 @@
+class Solution {
+public:
+    long long minCost(vector<int>& basket1, vector<int>& basket2) {
+        map<int, int> freq;
+        for (int f : basket1) freq[f]++;
+        for (int f : basket2) freq[f]--;
+
+        vector<int> toMove;
+        int minVal = INT_MAX;
+
+        for (auto& [fruit, cnt] : freq) {
+            if (cnt % 2 != 0) return -1; // impossible to match
+            for (int i = 0; i < abs(cnt) / 2; ++i)
+                toMove.push_back(fruit);
+            minVal = min(minVal, fruit);
+        }
+
+        sort(toMove.begin(), toMove.end());
+
+        long long cost = 0;
+        int n = toMove.size();
+        for (int i = 0; i < n / 2; ++i) {
+            cost += min(toMove[i], 2 * minVal);
+        }
+
+        return cost;
+    }
+};
