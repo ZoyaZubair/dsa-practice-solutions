@@ -1,0 +1,18 @@
+
+# Notes & Explanation
+
+## Approach:
+1. Iterate over each fruit from left to right.
+2. For each fruit, iterate through the baskets to find the leftmost one with enough capacity.
+3. If found, place the fruit there and remove the basket from further use.
+4. If not found, count it as unplaced.
+
+## Optimization Hint:
+- Using a more efficient data structure like a multiset (if allowed) would allow better insert/erase/search operations instead of linear scans.
+- Sorting both arrays and applying a two-pointer technique can improve time complexity to O(n log n) or O(n) depending on constraints.
+
+## Time Complexity:
+- Worst case O(n^2) due to `erase` in vector.
+
+## Space Complexity:
+- O(1) extra space (excluding input).
